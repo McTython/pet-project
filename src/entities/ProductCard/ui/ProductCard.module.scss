@@ -36,6 +36,13 @@
       width: 100%;
       font-family: "Roboto";
       font-size: 16px;
+      &.inCart {
+        background-color: #e70000;
+        transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        &:hover {
+          background-color: #ff1717 !important;
+        }
+      }
     }
   }
 }

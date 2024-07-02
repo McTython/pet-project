@@ -2,16 +2,27 @@ import { Button, Card } from "antd";
 import { IProductCard } from "./interfaces/IProductCard";
 import styles from "./ProductCard.module.scss";
 import { StarFilled } from "@ant-design/icons";
+import { useSelector } from "react-redux";
+import { IProduct } from "@/shared/config/interfaces/IProduct";
+import useActions from "@/hooks/useActions";
 
 const { Meta } = Card;
 
 const ProductCard = ({ product }: IProductCard) => {
+  const { cart } = useSelector((state) => state);
+
+  const { toggleCart } = useActions();
+
+  const isExists = cart.some((p: IProduct) => p.id === product.id);
+
   return (
     <Card
       hoverable
       className={`${styles["product-card"]}`}
       styles={{ body: { padding: "0px 10px 10px 10px" } }}
-      cover={<img src={product.image} height={200} />}
+      cover={
+        <img src={product.image} height={200} style={{ padding: "10px" }} />
+      }
     >
       <div className={`${styles["product-card__wrapper"]}`}>
         <div className={`${styles["product-card__price"]}`}>
@@ -44,7 +55,13 @@ const ProductCard = ({ product }: IProductCard) => {
           </p>
         </div>
         <div className={`${styles["product-card__button"]}`}>
-          <Button type="primary">Add to cart</Button>
+          <Button
+            type="primary"
+            onClick={() => toggleCart(product)}
+            className={isExists ? styles.inCart : undefined}
+          >
+            {isExists ? "Remove from" : "Add to"} cart
+          </Button>
         </div>
       </div>
     </Card>
