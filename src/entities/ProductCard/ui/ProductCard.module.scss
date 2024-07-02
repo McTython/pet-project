@@ -1,0 +1,41 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 240px;
+  font-family: "Roboto";
+  font-size: 16px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  &__price {
+    font-size: 18px;
+  }
+  &__rating {
+    &-rate {
+      margin-left: 2px;
+    }
+    &-count {
+      &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 50%;
+        width: 4px;
+        height: 4px;
+        background-color: #9d9da5;
+        margin: 0 4px 2px;
+      }
+    }
+  }
+  &__button {
+    > button {
+      width: 100%;
+      font-family: "Roboto";
+      font-size: 16px;
+    }
+  }
+}
