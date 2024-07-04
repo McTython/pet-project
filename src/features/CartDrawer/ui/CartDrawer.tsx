@@ -1,10 +1,9 @@
 import { useTypedSelector } from "@/hooks/useTypedSelector";
-import { Button, Drawer, Input } from "antd";
+import { Button, Drawer } from "antd";
 import { ICartDrawer } from "./interfaces/ICartDrawer";
 import { useEffect, useState } from "react";
 import styles from "./CartDrawer.module.scss";
 import { ProductsCartList } from "@/widgets";
-import { setUncaughtExceptionCaptureCallback } from "process";
 
 const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
   const { cart } = useTypedSelector((state) => state);
@@ -63,7 +62,7 @@ const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: 600,
                     }}
                   >
@@ -78,7 +77,7 @@ const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
                       display: "flex",
                       justifyContent: "space-between",
                       fontWeight: 600,
-                      fontSize: 16,
+                      fontSize: 18,
                       paddingTop: 10,
                       borderTop: "1px solid rgb(226, 226, 233)",
                     }}

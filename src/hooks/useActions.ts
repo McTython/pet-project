@@ -1,4 +1,4 @@
-import { cartActions } from "@/store/cart/cart.slice";
+import { actions as cartActions } from "@/store/cart/cart.slice";
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux";
