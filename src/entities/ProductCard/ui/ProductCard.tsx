@@ -33,13 +33,7 @@ const ProductCard = ({ product }: IProductCard) => {
             <span>{product.price}</span>
           </p>
         </div>
-        <Meta
-          title={
-            <p>
-              <span>{product.title}</span>
-            </p>
-          }
-        />
+        <Meta title={<span>{product.title}</span>} />
         <Rating product={product} />
         <div className={`${styles["product-card__button"]}`}>
           <Button

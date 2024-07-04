@@ -12,7 +12,7 @@ const ProductCartCard = ({ product }: IProductCartCard): React.ReactElement => {
     <Card key={product.id} hoverable styles={{ body: { padding: 12 } }}>
       <div className={`${styles["product-cart"]}`}>
         <Meta
-          title={<p>{product.title}</p>}
+          title={<span>{product.title}</span>}
           description={<Rating product={product} />}
           avatar={
             <img
