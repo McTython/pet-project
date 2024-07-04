@@ -1,6 +1,17 @@
-@import "utils/variables.scss";
+@import "utils/media";
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+*:focus {
+  outline: none;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +21,11 @@
   font-weight: 400;
 }
 html {
+  box-sizing: border-box;
+  line-height: 1;
+  scroll-behavior: smooth;
+  text-rendering: unset;
+  -webkit-font-smoothing: unset;
   scrollbar-width: none;
 }
 body {
