@@ -26,9 +26,13 @@ const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
       open={open}
       width={480}
       styles={{
+        header: {
+          color: "var(--textPrimary)",
+          backgroundColor: "var(--backgroundSecondary)",
+        },
         body: {
           padding: 0,
-          background: "#f1f1f1",
+          backgroundColor: "var(--backgroundPrimary)",
         },
       }}
     >

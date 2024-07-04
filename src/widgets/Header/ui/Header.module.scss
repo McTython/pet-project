@@ -1,3 +1,5 @@
+@import "@/app/styles/utils/media";
+
 .header {
   display: flex;
   max-width: 1500px;
@@ -7,13 +9,34 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 84%;
+    width: 1250px;
+    @include media-custom(1259px) {
+      width: 1000px;
+    }
+    @include media-custom(1004px) {
+      width: 750px;
+    }
+    @include media-custom(767px) {
+      width: 675px;
+    }
+    @include media-custom(679px) {
+      width: 450px;
+    }
+    @include media-custom(450px) {
+      width: 370px;
+    }
+    @include media-custom(374px) {
+      width: 350px;
+    }
   }
   &__logo {
     font-size: 22px;
     font-weight: 600;
+    color: var(--textPrimary);
   }
-  &__cart {
+  &__buttons {
+    display: flex;
+    gap: 10px;
     > button {
       font-size: 16px;
       color: #fff;

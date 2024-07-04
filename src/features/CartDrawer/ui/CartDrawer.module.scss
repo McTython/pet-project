@@ -4,6 +4,8 @@
   gap: 10px;
   justify-content: space-between;
   height: 100%;
+  background-color: var(--backgroundPrimary);
+  color: var(--textPrimary);
   &__body {
     padding: 10px;
   }
@@ -14,7 +16,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: #fff;
+    background: var(--backgroundSecondary);
     padding: 10px;
   }
   &__coupon {
@@ -26,6 +28,7 @@
       outline: none;
       height: 20px;
       border-radius: 0;
+      color: var(--textPrimary);
       &:active,
       &:hover,
       &:focus {
@@ -41,7 +44,7 @@
     justify-content: space-between;
     font-size: 14px;
     font-weight: 600;
-    border-top: 1px solid rgb(226, 226, 233);
+    border-top: 1px solid var(--divideBorderColor);
     padding-top: 10px;
   }
   &__total {
@@ -50,7 +53,7 @@
     font-weight: 600;
     font-size: 18px;
     padding-top: 10px;
-    border-top: 1px solid rgb(226, 226, 233);
+    border-top: 1px solid var(--divideBorderColor);
   }
   &__order {
     width: 100%;

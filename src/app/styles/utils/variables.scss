@@ -1,3 +1,19 @@
+:root {
+  --backgroundPrimary: #f1f1f1;
+  --backgroundSecondary: #fff;
+  --cardBorderColor: #f0f0f0;
+  --textPrimary: rgba(0, 0, 0, 0.88);
+  --divideBorderColor: rgb(226, 226, 233);
+}
+
+[data-theme="dark"] {
+  --backgroundPrimary: #1f1f1f;
+  --backgroundSecondary: #292929;
+  --cardBorderColor: #292929;
+  --textPrimary: #fff;
+  --divideBorderColor: rgb(67, 67, 75);
+}
+
 // media
 $mediaWidthTablet: 1259px;
 $mediaWidthMob: 767px;
