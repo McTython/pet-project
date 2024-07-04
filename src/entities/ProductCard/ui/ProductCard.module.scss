@@ -4,7 +4,11 @@
   gap: 10px;
   width: 240px;
   font-size: 16px;
-  &__wrapper {
+  &__image {
+    padding: 10px;
+    object-fit: contain;
+  }
+  &__info {
     display: flex;
     flex-direction: column;
     gap: 10px;

@@ -8,24 +8,26 @@ interface IRatingComponent {
 
 const Rating = ({ product }: IRatingComponent): React.ReactElement => {
   return (
-    <p className={styles.rating}>
-      <span>
-        <StarFilled
-          style={{
-            color:
-              product.rating.rate < 4
-                ? "#ff0000"
-                : product.rating.rate < 7
-                  ? "#ff8a00"
-                  : "#ffac00",
-          }}
-        />
-      </span>
-      <span className={styles.rating__rate}>{product.rating.rate}</span>
-      <span className={styles.rating__count}>
-        {product.rating.count} ratings
-      </span>
-    </p>
+    <div>
+      <p className={styles.rating}>
+        <span>
+          <StarFilled
+            style={{
+              color:
+                product.rating.rate < 4
+                  ? "#ff0000"
+                  : product.rating.rate < 7
+                    ? "#ff8a00"
+                    : "#ffac00",
+            }}
+          />
+        </span>
+        <span className={styles.rating__rate}>{product.rating.rate}</span>
+        <span className={styles.rating__count}>
+          {product.rating.count} ratings
+        </span>
+      </p>
+    </div>
   );
 };
 

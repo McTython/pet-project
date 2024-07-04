@@ -1,18 +1,12 @@
 import { ProductCartCard } from "@/entities";
 import { useTypedSelector } from "@/hooks/useTypedSelector";
+import styles from "./ ProductsCartList.module.scss";
 
 const ProductsCartList = (): React.ReactElement => {
   const { cart } = useTypedSelector((state) => state);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-        marginTop: 15,
-      }}
-    >
+    <div className={`${styles["product-list"]}`}>
       {cart.map((product) => (
         <ProductCartCard key={product.id} product={product} />
       ))}

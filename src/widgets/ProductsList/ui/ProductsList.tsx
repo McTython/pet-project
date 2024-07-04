@@ -6,7 +6,7 @@ const ProductsList = (): React.ReactElement => {
   const { products } = useGetProducts();
 
   return (
-    <div className={styles.products}>
+    <div className={`${styles["product-list"]}`}>
       {products.map((product) => (
         <ProductCard key={product.title} product={product} />
       ))}

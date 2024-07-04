@@ -22,21 +22,25 @@ const ProductCard = ({ product }: IProductCard) => {
         <img
           src={product.image}
           height={200}
-          style={{ padding: "10px", objectFit: "contain" }}
+          className={`${styles["product-card__image"]}`}
         />
       }
     >
-      <div className={`${styles["product-card__wrapper"]}`}>
+      <div className={`${styles["product-card__info"]}`}>
         <div className={`${styles["product-card__price"]}`}>
           <p>
             <span>$</span>
             <span>{product.price}</span>
           </p>
         </div>
-        <Meta title={<span>{product.title}</span>} />
-        <div className={`${styles["product-card__rating"]}`}>
-          <Rating product={product} />
-        </div>
+        <Meta
+          title={
+            <p>
+              <span>{product.title}</span>
+            </p>
+          }
+        />
+        <Rating product={product} />
         <div className={`${styles["product-card__button"]}`}>
           <Button
             type="primary"
