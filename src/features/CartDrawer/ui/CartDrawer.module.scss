@@ -1,0 +1,36 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  height: 100%;
+  &__body {
+    padding: 10px;
+  }
+  &__result {
+    font-size: 22px;
+  }
+  &__footer {
+    background: #fff;
+    padding: 10px;
+  }
+  &__coupon {
+    > input {
+      padding: 0;
+      background: none;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      height: 20px;
+      border-radius: 0;
+      &:active,
+      &:hover,
+      &:focus {
+        background: none;
+        outline: 0;
+        outline-offset: 0;
+        border: 0;
+      }
+    }
+  }
+}

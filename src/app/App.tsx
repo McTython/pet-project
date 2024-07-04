@@ -1,7 +1,14 @@
-import { ProductsList } from "@/widgets";
+import { Header, ProductsList } from "@/widgets";
 
 function App() {
-  return <ProductsList />;
+  return (
+    <>
+      <Header />
+      <main style={{ paddingBottom: 10 }}>
+        <ProductsList />
+      </main>
+    </>
+  );
 }
 
 export default App;

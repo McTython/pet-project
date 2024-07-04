@@ -1,2 +1,4 @@
 import ProductCard from "./ProductCard/ui/ProductCard";
-export { ProductCard };
+import ProductCartCard from "./ProductCartCard/ui/ProductCartCard";
+
+export { ProductCard, ProductCartCard };
