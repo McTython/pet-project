@@ -16,6 +16,9 @@ export const cartSlice = createSlice({
         }
       } else state.push(action.payload);
     },
+    placeOrder: (state) => {
+      state.splice(0, state.length);
+    },
   },
 });
 

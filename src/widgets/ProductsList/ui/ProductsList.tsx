@@ -1,5 +1,5 @@
 import { ProductCard } from "@/entities";
-import useGetProducts from "@/shared/module/useGetProducts";
+import { useGetProducts } from "@/shared";
 import styles from "./ProductsList.module.scss";
 
 const ProductsList = (): React.ReactElement => {

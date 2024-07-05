@@ -1,9 +1,8 @@
 import { Button, Card } from "antd";
+import { ShoppingFilled } from "@ant-design/icons";
+import { Rating, useTypedSelector, useActions } from "@/shared";
 import { IProductCard } from "./interfaces/IProductCard";
 import styles from "./ProductCard.module.scss";
-import useActions from "@/hooks/useActions";
-import { useTypedSelector } from "@/hooks/useTypedSelector";
-import { Rating } from "@/shared";
 
 const { Meta } = Card;
 
@@ -47,6 +46,7 @@ const ProductCard = ({ product }: IProductCard) => {
             onClick={() => toggleCart(product)}
             className={isExistsInCart ? styles.inCart : undefined}
           >
+            <ShoppingFilled />
             {isExistsInCart ? "Remove from" : "Add to"} cart
           </Button>
         </div>

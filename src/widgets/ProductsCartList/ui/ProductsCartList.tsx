@@ -1,5 +1,5 @@
 import { ProductCartCard } from "@/entities";
-import { useTypedSelector } from "@/hooks/useTypedSelector";
+import { useTypedSelector } from "@/shared";
 import styles from "./ ProductsCartList.module.scss";
 
 const ProductsCartList = (): React.ReactElement => {

@@ -1,23 +1,31 @@
-import { useTypedSelector } from "@/hooks/useTypedSelector";
-import { Button, Drawer } from "antd";
-import { ICartDrawer } from "./interfaces/ICartDrawer";
 import { useEffect, useState } from "react";
-import styles from "./CartDrawer.module.scss";
+import { Button, Drawer } from "antd";
+import { DollarOutlined } from "@ant-design/icons";
+import { useActions, useTypedSelector } from "@/shared";
 import { EmptyCart, ProductsCartList } from "@/widgets";
+import { ICartDrawer } from "./interfaces/ICartDrawer";
+import styles from "./CartDrawer.module.scss";
 
 const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
+  const [totalSum, setTotalSum] = useState(0);
   const { cart } = useTypedSelector((state) => state);
+  const { placeOrder } = useActions();
 
   const getTotalSum = () => {
     cart.map((product) => setTotalSum((prev) => prev + product.price));
   };
 
-  const [totalSum, setTotalSum] = useState(0);
   useEffect(() => {
     setTotalSum(0);
     getTotalSum();
     setTotalSum((prev) => Number(prev.toFixed(2)));
   }, [cart]);
+
+  const handlePlaceOrder = () => {
+    onClose();
+    placeOrder();
+    console.log(cart);
+  };
 
   return (
     <Drawer
@@ -64,7 +72,12 @@ const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
                   {totalSum}
                 </p>
               </div>
-              <Button type="primary" className={styles.cart__order}>
+              <Button
+                type="primary"
+                className={styles.cart__order}
+                onClick={() => handlePlaceOrder()}
+              >
+                <DollarOutlined />
                 Place Order
               </Button>
             </div>

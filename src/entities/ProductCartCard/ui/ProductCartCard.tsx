@@ -1,8 +1,7 @@
 import { Button, Card } from "antd";
-import { IProductCartCard } from "./interfaces/IProductCartCard";
 import Meta from "antd/es/card/Meta";
-import { Rating } from "@/shared";
-import useActions from "@/hooks/useActions";
+import { Rating, useActions } from "@/shared";
+import { IProductCartCard } from "./interfaces/IProductCartCard";
 import styles from "./ProductCartCard.module.scss";
 
 const ProductCartCard = ({ product }: IProductCartCard): React.ReactElement => {
