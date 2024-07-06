@@ -1,24 +1,4 @@
 .cart {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
-  height: 100%;
-  background-color: var(--backgroundPrimary);
-  color: var(--textPrimary);
-  &__body {
-    padding: 10px;
-  }
-  &__info {
-    font-size: 22px;
-  }
-  &__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: var(--backgroundSecondary);
-    padding: 10px;
-  }
   &__coupon {
     &-input {
       display: flex;
@@ -56,23 +36,5 @@
     &-info {
       font-size: 12px;
     }
-  }
-  &__preresult,
-  &__total {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    font-weight: 600;
-    border-top: 1px solid var(--divideBorderColor);
-    padding-top: 10px;
-  }
-  &__total {
-    font-size: 18px;
-  }
-  &__order {
-    width: 100%;
-    padding: 18px 54px;
-    font-size: 18px;
-    border-radius: 20px;
   }
 }
