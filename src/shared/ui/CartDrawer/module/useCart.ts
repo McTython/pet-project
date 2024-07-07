@@ -8,7 +8,10 @@ const useCart = () => {
 
   useEffect(() => {
     getCartTotal();
-  }, [useTypedSelector((state) => state)]);
+  }, [
+    useTypedSelector((state) => state.cart.products),
+    useTypedSelector((state) => state.cart.coupon.discount),
+  ]);
 
   return {
     cart,

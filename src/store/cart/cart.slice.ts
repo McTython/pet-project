@@ -43,14 +43,17 @@ export const cartSlice = createSlice({
     getCartTotal(state) {
       if (state.products.length) {
         state.totalAmounts = state.products.reduce((cartTotal, cartProduct) => {
-          return (cartTotal += Number(cartProduct.price.toFixed(2)));
+          return (cartTotal = Number(
+            (cartTotal + cartProduct.price).toFixed(2),
+          ));
         }, 0);
         if (state.isCoupon) {
           const couponInPercent = state.coupon.discount / 100;
           state.totalAmountsWithCoupon = state.products.reduce(
             (cartTotal, cartProduct) => {
-              return (cartTotal += Number(
+              return (cartTotal = Number(
                 (
+                  cartTotal +
                   cartProduct.price -
                   cartProduct.price * couponInPercent
                 ).toFixed(2),
