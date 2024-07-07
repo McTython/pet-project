@@ -45,6 +45,7 @@ const ProductCard = ({ product }: IProductCard) => {
             type="primary"
             onClick={() => toggleCart(product)}
             className={isExistsInCart ? styles.inCart : undefined}
+            htmlType="button"
           >
             <ShoppingFilled />
             {isExistsInCart ? "Remove from" : "Add to"} cart

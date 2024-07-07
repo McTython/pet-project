@@ -6,12 +6,15 @@
   height: 100%;
   background-color: var(--backgroundPrimary);
   color: var(--textPrimary);
+
   &__body {
     padding: 10px;
   }
+
   &__info {
     font-size: 22px;
   }
+
   &__footer {
     display: flex;
     flex-direction: column;
@@ -19,11 +22,13 @@
     background: var(--backgroundSecondary);
     padding: 10px;
   }
+
   &__coupon {
     &-input {
       display: flex;
       align-items: center;
-      > input {
+
+      >input {
         width: 100%;
         padding: 0;
         padding-right: 40px;
@@ -34,6 +39,7 @@
         height: 20px;
         border-radius: 0;
         color: var(--textPrimary);
+
         &:active,
         &:hover,
         &:focus {
@@ -43,20 +49,24 @@
           border: 0;
         }
       }
-      > button {
+
+      >button {
         &.cancelCoupon {
           background-color: #e65b01;
           transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
           &:hover {
             background-color: #ff7d29 !important;
           }
         }
       }
     }
+
     &-info {
       font-size: 12px;
     }
   }
+
   &__preresult,
   &__total {
     display: flex;
@@ -66,13 +76,30 @@
     border-top: 1px solid var(--divideBorderColor);
     padding-top: 10px;
   }
+
   &__total {
     font-size: 18px;
   }
+
   &__order {
     width: 100%;
     padding: 18px 54px;
     font-size: 18px;
     border-radius: 20px;
+  }
+}
+
+:global {
+  .anticon-close {
+    svg {
+      color: var(--textPrimary);
+      transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    &:hover {
+      svg {
+        background: var(--backgroundPrimary);
+      }
+    }
   }
 }

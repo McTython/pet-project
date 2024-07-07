@@ -6,9 +6,11 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+
   @include media-mobile {
     gap: 10px;
   }
+
   @include media-custom(450px) {
     gap: 5px;
   }

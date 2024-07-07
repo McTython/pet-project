@@ -1,9 +1,9 @@
 import { Button } from "antd";
 import { MoonOutlined, ShoppingOutlined, SunOutlined } from "@ant-design/icons";
 import { useTypedSelector, CartDrawer } from "@/shared";
-import useDrawer from "@/widgets/Header/module/useDrawer";
-import useTheme from "@/widgets/Header/module/useTheme";
 import styles from "./Header.module.scss";
+import useDrawer from "../module/useDrawer";
+import useTheme from "../module/useTheme";
 
 const Header = (): React.ReactElement => {
   const { open, showDrawer, onClose } = useDrawer();
