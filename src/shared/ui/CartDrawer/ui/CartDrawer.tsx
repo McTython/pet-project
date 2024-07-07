@@ -7,7 +7,7 @@ import styles from "./CartDrawer.module.scss";
 import useCart from "@/shared/ui/CartDrawer/module/useCart";
 
 const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
-  const { cart, cartResult, placeOrder, handleCoupon } = useCart();
+  const { cart, handleCoupon, placeOrder } = useCart();
 
   const handlePlaceOrder = () => {
     onClose();
@@ -33,12 +33,12 @@ const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
       }}
     >
       <div className={styles.cart}>
-        {cart.length ? (
+        {cart.products.length ? (
           <>
             <div className={styles.cart__body}>
               <div className={styles.cart__info}>
-                {cart.length} products for <span>$</span>
-                {cartResult.total}
+                {cart.products.length} products for <span>$</span>
+                {cart.totalAmounts}
               </div>
               <ProductsCartList />
             </div>
@@ -46,28 +46,29 @@ const CartDrawer = ({ open, onClose }: ICartDrawer): React.ReactElement => {
               <div className={styles.cart__coupon}>
                 <CartForm
                   handleCoupon={handleCoupon}
-                  isCoupon={cartResult.isCoupon}
+                  isCoupon={cart.isCoupon}
+                  coupon={cart.coupon}
                 />
-                {cartResult.isCoupon && (
+                {cart.isCoupon && (
                   <div className={`${styles["cart__coupon-info"]}`}>
-                    Coupon gives you a {cartResult.coupon}% discount
+                    Coupon gives you a {cart.coupon.discount}% discount
                   </div>
                 )}
               </div>
               <div className={styles.cart__preresult}>
-                <p>{cart.length} products</p>
+                <p>{cart.products.length} products</p>
                 <p>
                   <span>$</span>
-                  {cartResult.total}
+                  {cart.totalAmounts}
                 </p>
               </div>
               <div className={styles.cart__total}>
                 <p>Total</p>
                 <p>
                   <span>$</span>
-                  {cartResult.isCoupon
-                    ? cartResult.withCoupon
-                    : cartResult.total}
+                  {cart.isCoupon
+                    ? cart.totalAmountsWithCoupon
+                    : cart.totalAmounts}
                 </p>
               </div>
               <Button

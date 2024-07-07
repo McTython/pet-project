@@ -6,15 +6,15 @@ const ProductsList = (): React.ReactElement => {
   const { isLoading, data } = useGetProductsQuery();
 
   return (
-    <div className={`${styles["product-list"]}`}>
+    <section className={`${styles["product-list"]}`}>
       {isLoading ? (
         <div>Loading..</div>
       ) : (
         data?.map((product) => (
-          <ProductCard key={product.title} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))
       )}
-    </div>
+    </section>
   );
 };
 

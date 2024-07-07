@@ -6,6 +6,7 @@ import styles from "./CartForm.module.scss";
 const CartForm = ({
   handleCoupon,
   isCoupon,
+  coupon,
 }: ICartForm): React.ReactElement => {
   const { handleSubmit, register } = useForm<{ coupon: string }>();
 
@@ -18,7 +19,11 @@ const CartForm = ({
       onSubmit={handleSubmit(onSubmit)}
       className={`${styles["cart__coupon-input"]}`}
     >
-      <input placeholder={"Coupon"} {...register("coupon")} />
+      <input
+        placeholder={"Coupon"}
+        {...register("coupon")}
+        defaultValue={isCoupon ? coupon.text : ""}
+      />
       <Button
         type="primary"
         className={isCoupon ? styles.cancelCoupon : undefined}

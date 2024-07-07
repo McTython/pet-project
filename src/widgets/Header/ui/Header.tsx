@@ -7,7 +7,7 @@ import useTheme from "../module/useTheme";
 
 const Header = (): React.ReactElement => {
   const { open, showDrawer, onClose } = useDrawer();
-  const { cart } = useTypedSelector((state) => state);
+  const { length } = useTypedSelector((state) => state.cart.products);
   const { theme, toggle } = useTheme();
   return (
     <header className={styles.header}>
@@ -22,7 +22,7 @@ const Header = (): React.ReactElement => {
             onClick={() => showDrawer()}
             icon={<ShoppingOutlined />}
           >
-            {cart.length > 0 && <span>{cart.length}</span>}
+            {length > 0 && <span>{length}</span>}
           </Button>
           <CartDrawer open={open} onClose={onClose} />
         </div>

@@ -8,9 +8,9 @@ const { Meta } = Card;
 
 const ProductCard = ({ product }: IProductCard) => {
   const { toggleCart } = useActions();
-  const { cart } = useTypedSelector((state) => state);
+  const { products } = useTypedSelector((state) => state.cart);
 
-  const isExistsInCart = cart.some((p) => p.id === product.id);
+  const isExistsInCart = products.some((p) => p.id === product.id);
 
   return (
     <Card

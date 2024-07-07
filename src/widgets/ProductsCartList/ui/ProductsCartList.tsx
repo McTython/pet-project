@@ -6,11 +6,11 @@ const ProductsCartList = (): React.ReactElement => {
   const { cart } = useTypedSelector((state) => state);
 
   return (
-    <div className={`${styles["product-list"]}`}>
-      {cart.map((product) => (
+    <section className={`${styles["product-list"]}`}>
+      {cart.products.map((product) => (
         <ProductCartCard key={product.id} product={product} />
       ))}
-    </div>
+    </section>
   );
 };
 
